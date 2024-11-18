@@ -1,0 +1,96 @@
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Trolls2 hw5 item7</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet"/>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEGZT5119E"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DEGZT5119E');
+    </script>
+
+     
+
+     
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>trolls2 hw5 item7</h1>
+
+      <div class="screenshots hidden">
+
+      </div>
+
+      <div class="inputs ">
+        <h3>Inputs</h3>
+
+<div class="input">
+    <input id="R" placeholder="orbit radius" type="text">
+</div>
+<div class="input">
+  <input id="F" placeholder="exerted force on satellite" type="text">
+</div>
+<div class="input">
+  <input id="R2" placeholder="increased orbit radius" type="text">
+</div>
+<div class="input">
+  <input id="T" placeholder="orbit period (h)" type="text">
+</div>
+
+        <button class="calculate-button " onclick="calculate()">Calculate</button>
+      </div>
+
+      <div class="answers ">
+        <h3>Answers</h3>
+
+<div>
+    PART A:
+    <span id="result"></span> N
+</div>
+<div>
+  PART B:
+  <span id="result2"></span> kg
+</div>
+
+      </div>
+    </div>
+
+    <div class="buttons ">
+      <a class="button-previous" href="item6.html">Previous</a>
+      <a class="button-middle" href="../menu.html">Items</a>
+      <a class="button-next" href="item8.html">Next</a>
+    </div>
+
+    <div class="footer">
+        trolls2
+    </div>
+
+    <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function calculate() {
+var R = Number(document.getElementById('R').value);
+var F = Number(document.getElementById('F').value);
+var R2 = Number(document.getElementById('R2').value);
+var T = Number(document.getElementById('T').value);
+var G = 6.67*Math.pow(10,-11);
+var result = Math.round(F*(Math.pow(R,2)/Math.pow(R2,2))*10)/10;
+var result2 = Math.round(((Math.pow(Math.PI/(1800*T),2)*Math.pow(R2,3))/G)/Math.pow(10,24))/100 + "*10^26";
+document.getElementById('result').innerHTML = result;
+document.getElementById('result2').innerHTML = result2;
+      }
+    </script>
+  </body>
+
+</html>
