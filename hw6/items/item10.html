@@ -112,10 +112,10 @@
         var resultD = (force * sin + m * g) * mu;
         var resultF = Math.sqrt(Einitial + resultB - ((resultD + FfrInitial) / 2) * meters);
 
-        document.getElementById("resultB").innerHTML = Math.round(resultB * 10) / 10 + " J";
+        document.getElementById("resultB").innerHTML = mert(resultB, 2) + " J";
         document.getElementById("resultC").innerHTML = FfrInitial + " N";
-        document.getElementById("resultD").innerHTML = Math.round(resultD * 10) / 10 + " N";
-        document.getElementById("resultF").innerHTML = Math.round(resultF * 100) / 100 + " m/s";
+        document.getElementById("resultD").innerHTML = mert(resultD, 2) + " N";
+        document.getElementById("resultF").innerHTML = mert(resultF, 2) + " m/s";
       }
     </script>
   </body>
