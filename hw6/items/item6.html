@@ -70,6 +70,14 @@
     <script type="text/javascript" src="../../js/main.js"></script>
 
     <script>
+      function selim(n) {
+        let i = 0;
+        while(n > 10) {
+          n /= 10;
+          i++;
+        }
+        return `${n}*10^${i}`;
+      }
       function calculate() {
 var m = Number(document.getElementById('m').value);
 var h = Number(document.getElementById('h').value);
@@ -78,9 +86,9 @@ var M = 5.98*Math.pow(10,24);
 var R = 6.38*Math.pow(10,6);
 var r1 = R+h*1000;
 
-var result1 = Math.round(G*M*m*(1/R-1/r1));
+var result1 = (G*M*m*(1/R-1/r1)).toPrecision(3);
 
-document.getElementById('result1').innerHTML = result1 + " J";
+document.getElementById('result1').innerHTML = selim(result1) + " J";
 
       }
     </script>
