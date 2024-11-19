@@ -46,7 +46,7 @@
   <input id="m" placeholder="pilot's mass(kg)" type="text">
 </div>
 <div class="input">
-  <input id="v" placeholder="velocity(m/s)" type="text">
+  <input id="v" placeholder="terminal velocity(m/s)" type="text">
 </div>
 
         <button class="calculate-button " onclick="calculate()">Calculate</button>
@@ -89,11 +89,12 @@ var h = Number(document.getElementById('h').value);
 var crh = Number(document.getElementById('crh').value);
 var m = Number(document.getElementById('m').value);
 var v = Number(document.getElementById('v').value);
+var g = 9.8;
 
-var res =-m*v*v/2
+var res =-m*v*v/2 - m*g*crh;
   document.getElementById('result1').innerHTML = res+" J";
-  document.getElementById('result2').innerHTML = res/crh+" N";
-  document.getElementById('result3').innerHTML= res+m*9.8*h+" J";
+  document.getElementById('result2').innerHTML = -res/crh+" N";
+  document.getElementById('result3').innerHTML= res+m*9.8*(h+crh)+" J";
 
 
       }
