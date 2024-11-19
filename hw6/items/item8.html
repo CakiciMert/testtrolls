@@ -92,9 +92,9 @@ var v = Number(document.getElementById('v').value);
 var g = 9.8;
 
 var res =-m*v*v/2 - m*g*crh;
-  document.getElementById('result1').innerHTML = res.toPrecision(3)+" J";
-  document.getElementById('result2').innerHTML = (-res/crh).toPrecision(3)+" N";
-  document.getElementById('result3').innerHTML= (-res-m*9.8*(h+crh)).toPrecision(3)+" J";
+  document.getElementById('result1').innerHTML = selim(res, 3) +" J";
+  document.getElementById('result2').innerHTML = selim(-res/crh, 3) +" N";
+  document.getElementById('result3').innerHTML = selim(-res-m*9.8*(h+crh), 3) +" J";
 
 
       }

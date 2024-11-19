@@ -87,7 +87,7 @@ var m = Number(document.getElementById('m').value);
 var d = Number(document.getElementById('d').value);
 var l = Number(document.getElementById('l').value);
 
-var res = Number((-m*9.8*Math.sin(d*Math.PI/180)*l).toPrecision(2));
+var res = mert(-m*9.8*Math.sin(d*Math.PI/180)*l, 2);
 
 
 document.getElementById('result').innerHTML = res + " J";
