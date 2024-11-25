@@ -36,19 +36,15 @@
         <h3>Inputs</h3>
   
   <div class="input">
-    <input id="l" placeholder="length (m)" type="text">
+    <input id="m" placeholder="mass (kg)" type="text">
   </div>
   
   <div class="input">
-  <input id="c" placeholder="current (A)" type="text">
+  <input id="h" placeholder="height (m)" type="text">
   </div>
 
   <div class="input">
-    <input id="fi" placeholder="F_i (N)" type="text">
-    </div>
-    
-  <div class="input">
-    <input id="fk" placeholder="F_k (positive N)" type="text">
+    <input id="k" placeholder="spring constant (k)" type="text">
     </div>
 
         <button class="calculate-button " onclick="calculate()">Calculate</button>
@@ -63,12 +59,12 @@
 
 <div>
   PART B: 
-  0
+  <span id="result2"></span>
 </div>
 
 <div>
   PART C:
-  <span id="result2"></span>
+  <span id="result3"></span>
 </div>
 
 
@@ -87,16 +83,18 @@
     <script type="text/javascript" src="../../js/main.js"></script>
     <script>
       function calculate() {
-var l = Number(document.getElementById('l').value);
-var c = Number(document.getElementById('c').value);
-var fi = Number(document.getElementById('fi').value);
-var fk = Number(document.getElementById('fk').value);
+var m = Number(document.getElementById('m').value);
+var h = Number(document.getElementById('h').value);
+var k = Number(document.getElementById('k').value);
+g = 9.8;
 
-var result1 = fk/(c*l);
-var result2 = fi/(c*l);
+var result1 = m*g*h;
+var result2 = Math.sqrt(2*g*h);
+var result3 = berken(k/2, -m*g, -m*g*h);
 
-document.getElementById('result1').innerHTML = result1;
-document.getElementById('result2').innerHTML = result2;
+document.getElementById('result1').innerHTML = selim(result1, 2);
+document.getElementById('result2').innerHTML = mert(result2, 2);
+document.getElementById('result3').innerHTML = mert(result3, 2);
 
       }
     </script>
