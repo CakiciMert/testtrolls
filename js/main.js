@@ -2,6 +2,15 @@
 document.addEventListener("DOMContentLoaded", function() {
   var colorNumber = Math.floor(Math.random() * 7) + 1;
   document.getElementsByTagName('body')[0].classList.add('color-' + colorNumber);
+  console.log(localStorage.getItem("partymode"));
+  if(localStorage.getItem("partymode") == "true")
+	{
+		console.log("partymode on");
+	}
+	else if(localStorage.getItem("partymode") == "false")
+	{
+		console.log("partymode off");
+	}
 });
 
 document.addEventListener('keydown', function(e) {
@@ -9,6 +18,7 @@ document.addEventListener('keydown', function(e) {
 		calculate();
 	}
 });
+
 
 function selim(n, f) { //sigfig + sci_notation
 	let nSig= Number(n.toPrecision(f));

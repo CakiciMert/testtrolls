@@ -86,7 +86,13 @@
                         <a href="404.html" class='btn btn-outline-light' role='button' target="_self">hw9</a>
                         <a href="404.html" class='btn btn-outline-light' role='button' target="_self">hw10</a>
                       </div>
+                    <label class="switch">
+                        <input type="checkbox" onclick="partymode()">
+                        <span class="slider round"></span>
+                    </label>
                 </div>
+
+
             </div>
         </div>
     </div>
@@ -96,6 +102,18 @@
         const textArray = ["Tremila","Selim","Berkennnnnn","ali firat celik","mert can coskun"];
     </script>
     <script src='js/script.js'></script>
-
+    <script>
+        function partymode() {
+            localStorage.setItem("partymode", document.querySelector('.switch input').checked);
+            if(localStorage.getItem("partymode") == "true")
+            {
+                console.log("partymode on");
+            }
+            else if(localStorage.getItem("partymode") == "false")
+            {
+                console.log("partymode off");
+            }
+        }
+    </script>
     </body>
 </html>

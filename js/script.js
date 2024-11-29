@@ -35,3 +35,8 @@ function typeJs() {
 }
 
 setInterval(typeJs, 120);
+
+
+//window.onload = function() {
+//    localStorage.setItem("partymode",false);
+//}
