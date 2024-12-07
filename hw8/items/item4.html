@@ -30,19 +30,39 @@
 
 
 
-    <div class="answers ">
+    <div class="inputs ">
+      <h3>Inputs</h3>
+
+<div class="input">
+  <input id="m" placeholder="baseball mass(kg)" type="text">
+</div>
+<div class="input">
+  <input id="vi" placeholder="inital velocity(m/s)" type="text">
+</div>
+<div class="input">
+  <input id="h" placeholder="height(m)" type="text">
+</div>
+<div class="input">
+  <input id="s" placeholder="contact time(ms)" type="text">
+  </div>
+
+      <button class="calculate-button " onclick="calculate()">Calculate</button>
+</div>
+
+<div class="answers ">
       <h3>Answers</h3>
 
 <div>
-  PART A:
-  2&amp;pi;&amp;mu;@Sub{0}@DIV{I;4&amp;pi;r}
-  <div class="screenshots">
-    <img class="img"
-    src="images/item4A.png">
-  </div>
+     PART A:
+     <span id="result1"></span>
+</div>
+<div>
+  PART B:
+  <span id="result2"></span>
 </div>
 
-    </div>
+</div>
+
   </div>
 
     <div class="buttons ">
@@ -56,6 +76,20 @@
     </div>
 
     <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function calculate() {
+	   var m = berkenn(document.getElementById('m').value);
+      var vi = berkenn(document.getElementById('vi').value);
+      var h = berkenn(document.getElementById('h').value);
+      var s = berkenn(document.getElementById('s').value);
+      var vf=sqrt(2*9.8*h);
+      var dp=sqrt(sqr(vf)+sqr(vi));
+      var result1 = 1000*dp*m/s;
+      var result2 = 180- (Math.atan(vf/vi)*180/Math.PI);
+	   document.getElementById('result1').innerHTML = mert(result1, 3);
+     document.getElementById('result2').innerHTML = mert(result2, 3);
+      }
+  </script>
   </body>
 
 </html>
