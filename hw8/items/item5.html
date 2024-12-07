@@ -29,27 +29,52 @@
     <div class="container">
       <h1>trolls2 hw8 item5</h1>
 
+      <div class="inputs ">
+        <h3>Inputs</h3>
+  
+  <div class="input">
+    <input id="m_A" placeholder="m_A (kg)" type="text">
+  </div>
+
+  <div class="input">
+  <input id="m_B" placeholder="m_B (kg)" type="text">
+  </div>
+
+  <div class="input">
+    <input id="V_A_i" placeholder="V_A_i (m/s)" type="text">
+    </div>
+
+    <div class="input">
+      <input id="V_A_j" placeholder="V_A_j (m/s)" type="text">
+    </div>
+  
+    <div class="input">
+    <input id="V_A_k" placeholder="V_A_k (m/s)" type="text">
+    </div>
+  
+    <div class="input">
+      <input id="V'_A_i" placeholder="V'_A_i (m/s)" type="text">
+      </div>
+      
+      <div class="input">
+        <input id="V'_A_j" placeholder="V'_A_j (m/s)" type="text">
+        </div>
+      
+        <div class="input">
+          <input id="V'_A_k" placeholder="V'_A_k (m/s)" type="text">
+          </div>
+
+        <button class="calculate-button " onclick="calculate()">Calculate</button>
+</div>
 
       <div class="answers ">
         <h3>Answers</h3>
 
 
-<div>
-    PART A:
-    @DIV{(&amp;mu;@Sub{0}I@Sub{1}I@Sub{2}a@Sup{2});2&amp;pi;(d@Sup{2}-@DIV{a@Sup{2};4})}
-    <div class="screenshots">
-      <img class="img"
-      src="images/item5A.png">
-    </div>
-</div>
-<div>
-  PART B:
-  &amp;mu;@Sub{0}I@Sub{2}@DIV{m;2&amp;pi;(d@Sup{2}-@DIV{a@Sup{2};4})}
-  <div class="screenshots">
-    <img class="img"
-    src="images/item5B.png">
-  </div>
-</div>
+        <div>
+          PART A:
+          <span id="result1"></span>
+        </div>
 
       </div>
     </div>
@@ -65,6 +90,24 @@
     </div>
 
     <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function calculate() {
+	   var m_A = berkenn(document.getElementById('m_A').value);
+	   var m_B = berkenn(document.getElementById('m_B').value);
+	   var V_A_i = berkenn(document.getElementById('V_A_i').value);
+     var V_A_j = berkenn(document.getElementById('V_A_j').value);
+     var V_A_k = berkenn(document.getElementById('V_A_k').value);
+     var Vf_A_i = berkenn(document.getElementById("V'_A_i").value);
+     var Vf_A_j = berkenn(document.getElementById("V'_A_j").value);
+     var Vf_A_k = berkenn(document.getElementById("V'_A_k").value);
+
+     var result1 = m_A * (V_A_i - Vf_A_i) / m_B;
+     var result2 = m_A * (V_A_j - Vf_A_j) / m_B;
+     var result3 = m_A * (V_A_k - Vf_A_k) / m_B;
+
+	   document.getElementById('result1').innerHTML = mert(result1, 2) + ", " + mert(result2, 2) + ", " + mert(result3, 2) + " m/s";
+      }
+</script>
   </body>
 
 </html>

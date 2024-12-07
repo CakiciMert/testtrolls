@@ -29,17 +29,27 @@
     <div class="container">
       <h1>trolls2 hw8 item3</h1>
 
+      <div class="inputs ">
+        <h3>Inputs</h3>
+  
+  <div class="input">
+    <input id="a" placeholder="i" type="text">
+  </div>
+
+  <div class="input">
+  <input id="b" placeholder="j (WITHOUT t^2 and WITH minus)" type="text">
+  </div>
+  
+        <button class="calculate-button " onclick="calculate()">Calculate</button>
+</div>
+
       <div class="answers ">
         <h3>Answers</h3>
 
-<div>
-    PART A:
-    -(@DIV{(&amp;mu;@Sub{0}@DIV{IN;a});2})@HAT{i}
-    <div class="screenshots">
-      <img class="img"
-      src="images/item3A.png">
-    </div>
-</div>
+        <div>
+          PART A:
+          <span id="result1"></span>
+        </div>
 
       </div>
     </div>
@@ -55,6 +65,17 @@
     </div>
 
     <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function calculate() {
+	   var a = berkenn(document.getElementById('a').value);
+	   var b = berkenn(document.getElementById('b').value);
+
+	   var result1 = 2*a;
+     var result2 = 56*b/3;
+
+	   document.getElementById('result1').innerHTML = mert(result1, 2) + ", " + mert(result2, 2);
+      }
+</script>
   </body>
 
 </html>

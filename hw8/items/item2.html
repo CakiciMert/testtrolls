@@ -28,29 +28,23 @@
   <body>
     <div class="container">
       <h1>trolls2 hw8 item2</h1>
-      <div class="inputs ">
-        <h3>Inputs</h3>
-  
-  <div class="input">
-    <input id="i" placeholder="current I = _A" type="text">
-  </div>
-  <div class="input">
-  <input id="r1" placeholder="r1" type="text">
-  </div>
-  <div class="input">
-    <input id="r2" placeholder="r2" type="text">
-    </div>
-  
-        <button class="calculate-button " onclick="calculate()">Calculate</button>
-      </div>
 
       <div class="answers ">
         <h3>Answers</h3>
 
-<div>
-  PART A:
-  <span id="result"></span>
-</div>
+        <div>
+          PART A: <hr>
+          <div>
+            <img class="img" src="./2A.png">
+          </div>
+        </div>
+        
+        <div>
+          PART B: <hr>
+          <div>
+            <img class="img" src="./2B.png">
+          </div>
+        </div>
 
       </div>
     </div>
@@ -66,20 +60,7 @@
     </div>
 
     <script type="text/javascript" src="../../js/main.js"></script>
-    <script>
-      function calculate() {
-var i = Number(document.getElementById('i').value);
-var r1 = Number(document.getElementById('r1').value);
-var r2 = Number(document.getElementById('r2').value);
-
-var f1 = 4*Math.PI * Math.pow(10, -7)*i*13/(2*Math.PI*r1*Math.pow(10, -2))*0.3;
-var f2 = 4*Math.PI * Math.pow(10, -7)*13*22/(2*Math.PI*r2*Math.pow(10, -2))*0.3;
-var result = f2 - f1;
-
-document.getElementById('result').innerHTML = result + "N";
-
-      }
-    </script>
+    
   </body>
 
 </html>
