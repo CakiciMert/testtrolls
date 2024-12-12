@@ -71,15 +71,15 @@
     <script type="text/javascript" src="../../js/main.js"></script>
     <script>
       function calculate() {
-var r_0 = berkenn(document.getElementById('r_0').value);
+var r_0 = berkenn(document.getElementById('r_0').value)/100;
 var R_0 = berkenn(document.getElementById('R_0').value)/100;
 
 var g = 9.8;
-var resultA = sqrt(5*sqrt(2)/7 * g * R_0);
-var resultB = resultA * berken(g/2, -resultA/sqrt(2), -R_0*(1-1/sqrt(2))) / sqrt(2) + R_0 / sqrt(2);
+var resultA = sqrt(10/7 * g * (R_0 - r_0)/sqrt(2));
+var resultB = (resultA * berken(g/2, -resultA/sqrt(2), (/*r_0*/ - R_0)*(1-1/sqrt(2))) + (R_0/* - r_0*/)) / sqrt(2);
 
-document.getElementById('resultA').innerHTML = mert(resultA, 2) + " m/s";
-document.getElementById('resultB').innerHTML = /*mert(resultB, 2)*/resultB + " m???";
+document.getElementById('resultA').innerHTML = mert(resultA, 2).toString() + " m/s";
+document.getElementById('resultB').innerHTML = mert(resultB, 2).toString() + " m";
 
       }
     </script>
