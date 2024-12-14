@@ -100,8 +100,8 @@
       function calculate() {
          var r = berkenn(document.getElementById('r').value);
 
-         var resultF = 26.16 * r;
-         var resultG = resultF * 0.15;
+         var resultF = 26.16706098377752 * r;
+         var resultG = resultF * r;
     
          document.getElementById('resultF').innerHTML = mert(resultF, 2).toString() + " m*N";
          document.getElementById('resultG').innerHTML = mert(resultG, 2).toString() + " kg*m^2";
