@@ -29,6 +29,16 @@
     <div class="container">
       <h1>trolls2 hw9 item5</h1>
 
+      <div class="inputs ">
+        <h3>Inputs</h3>
+      
+        <div class="input">
+           <input id="r" placeholder="radius of pulley (m)" type="text">
+        </div>
+        
+        <button class="calculate-button " onclick="calculate()">Calculate</button>
+      </div>
+      
       <div class="answers ">
         <h3>Answers</h3>
 
@@ -62,11 +72,11 @@
 </div>
 <div>
   PART F:
-  3.9 m*N
+  <span id = "resultF"></span>
 </div>
 <div>
   PART G:
-  0.59 kg*m^2
+  <span id = "resultG"></span>
 </div>
       </div>
     </div>
@@ -82,6 +92,17 @@
     </div>
 
     <script type="text/javascript" src="../../js/main.js"></script>
+    <script>
+      function calculate() {
+         var r = berkenn(document.getElementById('r').value);
+
+         var resultF = 26.16 * r;
+         var resultG = resultF * 0.15;
+    
+         document.getElementById('resultF').innerHTML = mert(resultF, 2).toString() + " m*N";
+         document.getElementById('resultG').innerHTML = mert(resultG, 2).toString() + " kg*m^2";
+      }
+    </script>
   </body>
 
 </html>
