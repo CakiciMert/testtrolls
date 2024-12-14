@@ -88,7 +88,7 @@ var speed = angvel * (rhl/100);
 var bits = speed/(b/1000000);
 
 document.getElementById('result1').innerHTML = mert(angvel, 2);
-document.getElementById('result2').innerHTML = mert(speed, 2);
+document.getElementById('result2').innerHTML = mert(speed, 2).toString() + "m/s";
 document.getElementById('result3').innerHTML = selim(bits, 2)
       }
     </script>
